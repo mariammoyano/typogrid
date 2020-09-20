@@ -81,6 +81,14 @@
 
 .glyph {
   background-color: #2a5241;
+    
+  &:nth-last-child(2) {
+    grid-column-start: 2;
+  }
+  
+  &:nth-last-child(1) {
+    grid-column-start: 3;
+  }
 }
 
 
