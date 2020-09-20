@@ -11,10 +11,16 @@
   --bg-pos-grey: calc(var(--bg-position) / 2);
   --cell-size: 2;
   --gutter-size: 1;
+
+  
+  --sheet-width: calc(--grid-base * 7);
+  // TODO these are temporary
+  --sheet-height: 2000px;
 }
 
 .container {
   position: relative;
+  padding: var(--grid-base);
 }
 
 .base-square {
@@ -59,7 +65,13 @@
 }
 
 .font-sheet {
-  
+  width: var(--sheet-width);
+  height: var(--sheet-height);
+  background-color: #4e695e;
+}
+
+.glyph {
+  background-color: #2a5241;
 }
 
 .image {
