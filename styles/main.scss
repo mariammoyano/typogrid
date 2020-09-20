@@ -5,17 +5,20 @@
   --sq-color: transparent;
   --dot-size: 2px;
   --grid-base: 50px;
-  --row-height: calc(--grid-base * 3);
-  --col-width: calc(--grid-base * 2);
+  --row-height: calc(var(--grid-base) * 2);
+  --col-width: calc(var(--grid-base));
+  --grid-gap: calc(var(--grid-base) / 2);
+  --row-count: 7;
+  --col-count: 4;
+
   --bg-position: calc(var(--grid-base) / 2);
   --bg-pos-grey: calc(var(--bg-position) / 2);
   --cell-size: 2;
   --gutter-size: 1;
 
   
-  --sheet-width: calc(--grid-base * 7);
-  // TODO these are temporary
-  --sheet-height: 2000px;
+  --sheet-width: calc(((var(--col-width) + var(--grid-gap)) * var(--col-count) - var(--grid-gap)));
+  --sheet-height: calc(((var(--row-height) + var(--grid-gap)) * var(--row-count) - var(--grid-gap)));
 }
 
 .container {
@@ -68,18 +71,31 @@
   width: var(--sheet-width);
   height: var(--sheet-height);
   background-color: #4e695e;
+
+  display: grid;
+  grid-template-columns: repeat(var(--col-count), var(--col-width));
+  grid-template-rows: repeat(var(--row-count), var(--row-height));
+  grid-column-gap: var(--grid-gap);
+  grid-row-gap: var(--grid-gap);
 }
 
 .glyph {
   background-color: #2a5241;
 }
 
-.image {
-  opacity: .15;
-  margin-left: 9px;
-  margin-top: -117px;
-  transform: scale(0.95, 0.86);
-  margin-left: -41px;
-  margin-top: -74px;
-  transform: scale(0.95);
+
+.font-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--grid-base);
+  
+  .image {
+    opacity: .15;
+    margin-left: -83px;
+    margin-top: -65px;
+    transform: scale(0.95, 0.86);
+    transform: scale(0.95);
+  }
 }
