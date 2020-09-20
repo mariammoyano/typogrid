@@ -27,6 +27,7 @@
 }
 
 .base-square {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +71,7 @@
 .font-sheet {
   width: var(--sheet-width);
   height: var(--sheet-height);
-  background-color: #4e695e;
+  // background-color: #4e695e;
 
   display: grid;
   grid-template-columns: repeat(var(--col-count), var(--col-width));
@@ -80,7 +81,8 @@
 }
 
 .glyph {
-  background-color: #2a5241;
+  // background-color: #2a5241;
+  display: flex;
     
   &:nth-last-child(2) {
     grid-column-start: 2;
@@ -88,6 +90,11 @@
   
   &:nth-last-child(1) {
     grid-column-start: 3;
+  }
+
+  .img {
+    max-width: 100%;
+    align-self: flex-end;
   }
 }
 
