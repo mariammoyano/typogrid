@@ -5,11 +5,12 @@
   --sq-color: transparent;
   --dot-size: 2px;
   --grid-base: 50px;
+  --dot-bg-size: calc(var(--grid-base) / 2);
   --row-height: calc(var(--grid-base) * 2);
   --col-width: calc(var(--grid-base));
-  --grid-gap: calc(var(--grid-base) / 2);
-  --row-count: 7;
-  --col-count: 4;
+  --grid-gap: calc(var(--grid-base) / 1);
+  --col-count: 7;
+  --row-count: 4;
 
   --bg-position: calc(var(--grid-base) / 2);
   --bg-pos-grey: calc(var(--bg-position) / 2);
@@ -43,6 +44,7 @@
 }
 
 .overlay {
+  z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
@@ -59,16 +61,16 @@
   }
   
   &.dots {
-    z-index: 1;
     background-image:
       radial-gradient(#b4b4b4 calc(var(--dot-size) / 2), var(--sq-color) 0);
-    background-size: calc(var(--grid-base) / 2) calc(var(--grid-base) / 2);
+    background-size: var(--dot-bg-size) var(--dot-bg-size);
     background-position-x: var(--bg-pos-grey);
     background-position-y: var(--bg-pos-grey);
   }
 }
 
 .font-sheet {
+  z-index: 100;
   width: var(--sheet-width);
   height: var(--sheet-height);
   // background-color: #4e695e;
@@ -83,13 +85,29 @@
 .glyph {
   // background-color: #2a5241;
   display: flex;
+
+  &:empty {
+    background-color: #e2eff0;
+  }
+  
+  &:nth-last-child(5) {
+    grid-column-start: 2;
+  }
+    
+  &:nth-last-child(4) {
+    grid-column-start: 3;
+  }
+  
+  &:nth-last-child(3) {
+    grid-column-start: 4;
+  }
     
   &:nth-last-child(2) {
-    grid-column-start: 2;
+    grid-column-start: 5;
   }
   
   &:nth-last-child(1) {
-    grid-column-start: 3;
+    grid-column-start: 6;
   }
 
   .img {
