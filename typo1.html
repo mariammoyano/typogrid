@@ -5,91 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles/main.css">
+  <script>
+    function test() {
+      fillGlyphs(["assets/letter-00.png", "assets/letter-01.png"]);
+    }
+
+    function fillGlyphs(srcArray) {
+      let glyphs = document.getElementsByClassName('glyph');
+      srcArray.forEach((val, index) => {
+        glyph = glyphs.item(index);
+        glyph.innerHTML = '';
+        glyph.appendChild(createImg(val));
+      });
+    }
+
+    function createImg(src) {
+      let img = document.createElement('img');
+      img.classList.add("img");
+      img.src = src;
+      return img;
+    }
+
+    function onFileSelect() {
+      el = document.getElementById('fileInput');
+      fillGlyphs(getFileNames(el.files));
+    }
+
+    function getFileNames(files) {
+      names = [];
+      Array.prototype.forEach.call(files, function(file) {
+        names.push(`assets/${file.name}`)
+      });
+      return names;
+    }
+  </script>
 </head>
-<body>  
+<body>
+  <!-- <button onclick="test()">Test</button>   -->
+  <input id="fileInput" type='file' multiple onchange="onFileSelect()" />
   <div class="container">
     <div class="base-square"></div>
     <div class="overlay highlight"></div>
     <div class="overlay dots"></div>
     <div class="font-sheet">
-      <div class="glyph">
-        <img class="img" src="assets/letter-00.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-01.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-02.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-03.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-04.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-05.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-06.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-07.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-08.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-09.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-10.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-11.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-12.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-13.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-14.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-15.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-16.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-17.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-18.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-19.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-20.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-21.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-22.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-23.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-24.png">
-      </div>
-      <div class="glyph">
-        <img class="img" src="assets/letter-25.png">
-      </div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
+      <div class="glyph"></div>
     </div>
   </div>
   <div class="font-overlay">
