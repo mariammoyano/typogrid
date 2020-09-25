@@ -5,44 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles/main.css">
-  <script>
-    function test() {
-      fillGlyphs(["assets/letter-00.png", "assets/letter-01.png"]);
-    }
-
-    function fillGlyphs(srcArray) {
-      let glyphs = document.getElementsByClassName('glyph');
-      srcArray.forEach((val, index) => {
-        glyph = glyphs.item(index);
-        glyph.innerHTML = '';
-        glyph.appendChild(createImg(val));
-      });
-    }
-
-    function createImg(src) {
-      let img = document.createElement('img');
-      img.classList.add("img");
-      img.src = src;
-      return img;
-    }
-
-    function onFileSelect() {
-      el = document.getElementById('fileInput');
-      fillGlyphs(getFileNames(el.files));
-    }
-
-    function getFileNames(files) {
-      names = [];
-      Array.prototype.forEach.call(files, function(file) {
-        names.push(`assets/${file.name}`)
-      });
-      return names;
-    }
-  </script>
+  <script src="scripts.js"></script>
 </head>
 <body>
-  <!-- <button onclick="test()">Test</button>   -->
-  <input id="fileInput" type='file' multiple onchange="onFileSelect()" />
+  <input id="fileInput" name="fileInput" type='file' multiple onchange="onFileSelect(fileInput)" />
   <div class="container">
     <div class="base-square"></div>
     <div class="overlay highlight"></div>
@@ -75,9 +41,6 @@
       <div class="glyph"></div>
       <div class="glyph"></div>
     </div>
-  </div>
-  <div class="font-overlay">
-    <img class="image" src="typo1.png">
   </div>
 </body>
 </html>
