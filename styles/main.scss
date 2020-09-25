@@ -22,6 +22,29 @@
   --sheet-height: calc(((var(--row-height) + var(--grid-gap)) * var(--row-count) - var(--grid-gap)));
 }
 
+.upload-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #f76d6a;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#fileInput {
+  display: contents;
+}
+
 .container {
   position: relative;
   padding: var(--grid-base);

@@ -8,7 +8,14 @@
   <script src="scripts.js"></script>
 </head>
 <body>
-  <input id="fileInput" name="fileInput" type='file' multiple onchange="onFileSelect(fileInput)" />
+  <input
+    id="fileInput"
+    name="fileInput"
+    type='file'
+    multiple
+    onchange="onFileSelect(fileInput)"
+  />
+  <button class="upload-button" onclick="fileInput.click()">+</button>
   <div class="container">
     <div class="base-square"></div>
     <div class="overlay highlight"></div>
